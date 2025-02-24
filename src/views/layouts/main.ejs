@@ -9,7 +9,7 @@
     <title>Mijn eerste EJS applicatie</title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p><%=content %></p>
+    <%- include('../partials/nav') %> <%- body %> <%-
+    include('../partials/footer') %>
   </body>
 </html>

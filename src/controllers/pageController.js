@@ -1,24 +1,48 @@
+/**
+ *
+ * todo 1: render de person in contact
+ * todo 2: render de navigatie items in ELKE template
+ *  STAP 1: importeer
+ *  STAP 2: voeg toe aan het renderobject
+ *  STAP 3: voeg een navigatiebalk toe aan alle templates
+ */
+
+import { person, navItems } from '../data/data.js';
+
 export const home = (req, res) => {
-  res.render('home', {
-    title: 'Dinosaurs are awesome',
-    content: 'Dinosarus are cool creatures',
+  // res.render("<NAAM VAN DE VIEW>", {<DATA NAAR DE VIEW>})
+  res.render('pages/home', {
+    title: 'Dinosaurs around the world',
+    content: 'Welcome to the world of dinosaurs',
+    navItems,
   });
 };
 export const about = (req, res) => {
-  res.render('default', {
+  res.render('pages/default', {
     title: 'About us',
-    content: 'We are a group of dinosaur enthousiusts',
+    content: 'We are a group of dinosaur enthusiasts',
+    team: [
+      'T-Rex',
+      'Velociraptor',
+      'Stegosaurus',
+      '<strong>Premium</strong> Diplodocus',
+    ],
+    navItems,
   });
 };
 export const contact = (req, res) => {
-  res.render('contact', {
-    title: 'contact',
-    content: 'contact us at 09 233 40 86',
+  res.render('pages/contact', {
+    title: 'Contact',
+    content: 'Contact us at 09 233 40 89',
+    person,
+    navItems,
   });
 };
 export const privacy = (req, res) => {
-  res.render('default', {
-    title: 'default',
-    content: 'Dinos are protective of their privacy',
+  res.render('pages/default', {
+    title: 'Privacy Policy',
+    content: 'Dinosaurs are protective of their privacy',
+    team: false,
+    navItems,
   });
 };
